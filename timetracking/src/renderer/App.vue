@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'timetracking'
+    name: 'app'
   }
 </script>
 

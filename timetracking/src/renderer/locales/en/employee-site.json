@@ -1,0 +1,43 @@
+{
+  "employeeSite": {
+    "btnLogout": "Log Out",
+    "btnClockIn": "Clock In",
+    "btnClockOut": "Clock Out",
+    "btnSearch": "Search",
+    "btnReturn": "Return",
+    "btnSubmit": "Submit",
+    "employeePage": {
+      "header": "Employee Page",
+      "navBarBtn": [
+        "Worklog",
+        "Leave Request",
+        "Request History"
+      ]
+    },
+    "emplyeeWorklog": {
+      "header": "Emplyee Worklog",
+      "tbHeader": [
+        "Date",
+        "Name",
+        "Start Time",
+        "End Time",
+        "Clock in",
+        "Clock out",
+        "Status"
+      ]
+    },
+    "requestCreation": {
+      "header": "Request Creation Page",
+      "reason": "Reason"
+    },
+    "requestHistory": {
+      "header": "Request History Page",
+      "tbHeader": [
+        "Request Date",
+        "Leave Date",
+        "Reason",
+        "Status"
+      ]
+    }
+  }
+}

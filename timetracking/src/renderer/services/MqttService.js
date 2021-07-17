@@ -16,15 +16,15 @@ export function connect () {
     onSuccess: onConnect
   }
 
-  client.connect(connectOptions);
-  client.onConnectionLost = function (e) { console.log(e.errorMessage) };
+  client.connect(connectOptions)
+  client.onConnectionLost = function (e) { console.log(e.errorMessage) }
 }
 
 function onConnect () {
-    var interval = 100;
-    setInterval(publish, interval);
+  var interval = 100
+  setInterval(publish, interval)
 }
 
-function publish() {
+function publish () {
 
 }

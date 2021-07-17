@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import {getVideoSource} from '../services/ScreenshotService'
+import {getVideoSource} from '../../services/ScreenshotService'
 export default {
   data () {
     return {
