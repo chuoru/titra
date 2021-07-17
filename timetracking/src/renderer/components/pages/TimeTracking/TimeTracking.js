@@ -46,6 +46,7 @@ export default {
       this.notiTitle = this.$t('general.notifications.clockOutConfirm.title')
       this.notiBody = this.$t('general.notifications.clockOutConfirm.body') + this.clockOut.format(TIMEFORMAT)
       this.notiType = 'primary'
+      this.isClockInDisable = false
       this.isClockOutDisable = true
     },
     onClickOkButton () {

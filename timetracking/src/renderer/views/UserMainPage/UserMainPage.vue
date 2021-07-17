@@ -16,6 +16,6 @@ export default {
 </script>
 <style scoped>
 .user-main-page {
-    margin: auto;
+    text-align: center;
 }
 </style>
