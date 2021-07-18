@@ -15,7 +15,6 @@ const mediaConfig = {
 }
 
 export function getVideoSource () {
-  let data = []
   desktopCapturer
     .getSources({ types: ['window', 'screen'] })
     .then(async sources => {
