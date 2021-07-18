@@ -1,0 +1,2 @@
+## BACKEND FOLDER
+Flask / FastAPI 
