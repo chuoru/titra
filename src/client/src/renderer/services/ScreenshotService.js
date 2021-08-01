@@ -18,35 +18,40 @@ export function getVideoSource () {
   desktopCapturer
     .getSources({ types: ['window', 'screen'] })
     .then(async sources => {
-      for (const source of sources) {
-        let sourceType = source.split(':')[0]
-        mediaConfig.mandatory.chromeMediaSourceId = source.id
+      for (let index = 0; index < sources.length; index++) {
+        mediaConfig.video.mandatory.chromeMediaSourceId = sources[index].id
         try {
           const stream = await navigator
             .mediaDevices
             .getUserMedia(mediaConfig)
-          handleStream(stream, sourceType)
+          handleStream(stream, index)
         } catch (e) {
           handleError(e)
+          console.log(e)
         }
-        return
       }
     })
 }
 
-function handleStream (stream) {
-  const video = document.querySelector('video')
-  const canvas = document.createElement('canvas')
+function handleStream (stream, index) {
+  var video = document.createElement('video')
+  var canvas = document.createElement('canvas')
   var ctx = canvas.getContext('2d')
   video.srcObject = stream
-  video.onloadedmetadata = (e) => {
-    video.play()
-    canvas.width = video.videoWidth
-    canvas.height = video.videoHeight
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
-    const data = canvas.toDataURL('image/png')
-    console.log(data)
-    localStorage.setItem('screenshot', data)
+  console.log({inHandleStream: stream})
+  video.onloadeddata = (e) => {
+    console.log(e)
+    try {
+      video.play()
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+      const data = canvas.toDataURL('image/png')
+      console.log(stream)
+      localStorage.setItem('screenshot', data)
+    } catch (e) {
+      handleError(e)
+    }
   }
 }
 
